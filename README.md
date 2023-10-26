@@ -24,7 +24,7 @@ To use EXE-xc, you need:
 
 1. Clone the repository or download the source code.
 2. Make sure you have Python and tkinter installed on your system.
-3. Launch the application by running `exe-xc.py`.
+3. Launch the application by running `main.py`.
 
 ### Usage
 
