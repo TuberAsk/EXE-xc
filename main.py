@@ -63,7 +63,8 @@ def cut():
     script_entry.event_generate("<<Cut>>")
 
 app = tk.Tk()
-app.title("EXEpy v1.0.0")
+app.title("EXE-xc v1.0.0")
+app.iconbitmap("/Users/askil/Downloads/exe-xc-icon.ico")
 
 # Create a frame for the content
 content_frame = ttk.Frame(app, padding=10)
