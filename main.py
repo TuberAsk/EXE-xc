@@ -9,29 +9,7 @@ def browse_script():
     script_entry.delete(0, tk.END)
     script_entry.insert(0, script_file)
 
-def compile_script():
-    script_file = script_entry.get()
-    if script_file:
-        progress_window = tk.Toplevel(app)
-        progress_window.title("Compilation Progress")
-        progress_text = ScrolledText(progress_window, wrap=tk.WORD, height=20, width=50)
-        progress_text.pack()
-        
-        def compile():
-            cmd = ['pyinstaller', '--onefile', script_file]
-            process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
-            while True:
-                output = process.stdout.readline()
-                if not output:
-                    break
-                progress_text.insert(tk.END, output)
-                progress_text.see(tk.END)
-        
-        progress_button = ttk.Button(progress_window, text="Compile", command=compile)
-        progress_button.pack()
-        compile()
-
-def compile_c():
+def compile_file():
     c_file = script_entry.get()
     if c_file.endswith('.c'):
         progress_window = tk.Toplevel(app)
@@ -39,7 +17,7 @@ def compile_c():
         progress_text = ScrolledText(progress_window, wrap=tk.WORD, height=20, width=50)
         progress_text.pack()
         
-        def compilec():
+        def compile():
             cmd = ['cl', c_file]  # Use 'cl' for Microsoft's C/C++ compiler
             process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
             while True:
@@ -49,9 +27,12 @@ def compile_c():
                 progress_text.insert(tk.END, output)
                 progress_text.see(tk.END)
         
-        progress_button = ttk.Button(progress_window, text="Compile C", command=compilec)
+        progress_button = ttk.Button(progress_window, text="Compile / .EXE", command=compile)
         progress_button.pack()
-        compilec()
+        compile()
+
+def clear():
+    script_entry.delete(0, tk.END)
 
 def copy():
     script_entry.event_generate("<<Copy>>")
@@ -91,8 +72,11 @@ browse_button.grid(column=1, row=1, sticky=tk.W)
 separator = ttk.Separator(content_frame, orient='horizontal')
 separator.grid(column=0, row=2, columnspan=2, pady=10, sticky=(tk.W, tk.E))
 
-compile_button = ttk.Button(content_frame, text="Compile/ .EXE", command=compile_c)
+compile_button = ttk.Button(content_frame, text="Compile / .EXE", command=compile_file)
 compile_button.grid(column=0, row=3, pady=10, sticky=tk.W)
+
+clear_button = ttk.Button(content_frame, text="Clear", command=clear)
+clear_button.grid(column=0, row=5, pady=10, sticky=tk.W)
 
 result_label = ttk.Label(content_frame, text="", foreground="green")
 result_label.grid(column=0, row=4, columnspan=2, pady=5, sticky=tk.W)

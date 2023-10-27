@@ -16,7 +16,7 @@ EXE-xc is an open-source tool for compiling C source code into executable files.
 
 To use EXE-xc, you need:
 
-- [Python](https://www.python.org/) (3.6 or higher)
+- [Python](https://www.python.org/) (3.11 or higher)
 - [tkinter](https://docs.python.org/3/library/tkinter.html) (typically included with Python)
 - A C compiler (e.g., [Microsoft Visual C++](https://visualstudio.microsoft.com/visual-cpp-build-tools/))
 
@@ -24,18 +24,18 @@ To use EXE-xc, you need:
 
 1. Clone the repository or download the source code.
 2. Make sure you have Python and tkinter installed on your system.
-3. Launch the application by running `main.py`.
+3. Launch the application by running ```py -m main.py```.
 
 ### Usage
 
 1. Click the "Browse" button to select a C file or provide the file path.
-2. Click the "Compile/ .EXE" button to compile the selected C file.
+2. Click the "Compile / .EXE" button to compile the selected C file.
 3. A progress window will appear to track the compilation process.
 4. Once the compilation is complete, the resulting executable will be in the same directory as your C file.
 
 ### Contributing
 
-If you'd like to contribute to EXE-xc, please follow the contribution guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
+If you'd like to contribute to EXE-xc, please follow the contribution guidelines in [CONTRIBUTING](CONTRIBUTING.md).
 
 ### License
 
@@ -47,7 +47,5 @@ This project is licensed under the GNU Affero General Public License (AGPL-3.0).
 
 ## Contact
 
-If you have questions, feedback, or need assistance, you can contact us at [your@email.com].
-
-Happy coding!
+If you have questions, feedback, or need assistance, you can contact us at supportatisit@protonmail.com.
 
