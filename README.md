@@ -18,7 +18,7 @@ To use EXE-xc, you need:
 
 - [Python](https://www.python.org/) (3.11 or higher)
 - [tkinter](https://docs.python.org/3/library/tkinter.html) (typically included with Python)
-- A C compiler (e.g., [Microsoft Visual C++](https://visualstudio.microsoft.com/visual-cpp-build-tools/))
+- A C or C++ compiler (e.g., [Microsoft Visual C++](https://visualstudio.microsoft.com/visual-cpp-build-tools/))
 
 ### Installation
 
